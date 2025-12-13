@@ -327,7 +327,7 @@ async function seedTranslations() {
       };
 
       if (existing.length === 0) {
-        // Create new entry
+        // Create new entry - only if it doesn't exist
         const createdEntry = await app.entityService.create('api::translation.translation', {
           data: translationEntry,
         });
@@ -343,20 +343,9 @@ async function seedTranslations() {
         console.log(`✓ Created and published: ${namespace}.${key} (all languages)`);
         created++;
       } else {
-        // Update existing entry
-        await app.entityService.update('api::translation.translation', existing[0].id, {
-          data: translationEntry,
-        });
-        // Ensure it's published
-        try {
-          await app.documents('api::translation.translation').publish({ id: existing[0].id });
-        } catch (publishError) {
-          // If document service doesn't work, try setting publishedAt directly
-          await app.entityService.update('api::translation.translation', existing[0].id, {
-            data: { publishedAt: new Date() },
-          });
-        }
-        console.log(`↻ Updated and published: ${namespace}.${key} (all languages)`);
+        // Entry exists - preserve it (don't overwrite manual changes)
+        // To update existing entries, you would need to explicitly enable that option
+        console.log(`⊘ Skipped (preserved): ${namespace}.${key} - entry already exists`);
         updated++;
       }
     } catch (error) {
@@ -367,10 +356,11 @@ async function seedTranslations() {
 
   console.log(`\n=== Summary ===`);
   console.log(`Created: ${created}`);
-  console.log(`Updated: ${updated}`);
+  console.log(`Preserved (skipped): ${updated}`);
   console.log(`Errors: ${errors}`);
   console.log(`Total entries: ${translationData.length}`);
   console.log('\nTranslation seeding completed!');
+  console.log('Note: Existing entries were preserved to prevent overwriting manual changes.');
 
   await app.destroy();
   process.exit(0);

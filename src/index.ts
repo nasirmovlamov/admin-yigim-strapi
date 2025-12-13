@@ -19,14 +19,19 @@ export default {
    */
   async bootstrap({ strapi }: { strapi: Core.Strapi }) {
     // Auto-seed translations on startup
-    // This will create missing translations and update existing ones
+    // This will ONLY create missing translations - it will NOT overwrite existing data
+    // This preserves any manual changes or new translations added through the admin panel
     try {
       strapi.log.info('Checking and seeding translations...');
-      const result = await seedTranslations(strapi);
-      if (result.created > 0 || result.updated > 0) {
-        strapi.log.info(`Translation seeding completed: ${result.created} created, ${result.updated} updated`);
+      const result = await seedTranslations(strapi, { updateExisting: false });
+      if (result.created > 0) {
+        strapi.log.info(
+          `Translation seeding completed: ${result.created} created, ${result.skipped} preserved (existing entries not modified)`
+        );
+      } else if (result.skipped > 0) {
+        strapi.log.info(`All translations exist. ${result.skipped} entries preserved (not modified).`);
       } else {
-        strapi.log.info('All translations are up to date.');
+        strapi.log.info('No new translations to seed.');
       }
     } catch (error: any) {
       // Don't crash the app if seeding fails

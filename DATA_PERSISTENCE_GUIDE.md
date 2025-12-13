@@ -1,5 +1,27 @@
 # Data Persistence Guide for Strapi Cloud
 
+## Quick Reference
+
+**How to keep new data without deleting:**
+
+✅ **Local Development**:
+- Database file: `.tmp/data.db` (SQLite) - persists between restarts
+- Don't delete `.tmp/` directory to keep your data
+- New entries added through admin panel are automatically saved
+- Seed scripts only create missing entries, never overwrite existing ones
+
+✅ **Deployment (Strapi Cloud)**:
+- Database persists independently of deployments (managed PostgreSQL)
+- All content, translations, and media files are preserved
+- Seed scripts run on startup but only create missing entries
+- Manual changes through admin panel are never overwritten
+
+**Key Points**:
+- ✅ New data added through admin panel → **Automatically preserved**
+- ✅ Seed scripts → **Only create missing entries, never delete or overwrite**
+- ✅ Database → **Persists across deployments**
+- ✅ Media files → **Stored in cloud storage, persist across deployments**
+
 ## Overview
 
 This guide explains how data persistence works on Strapi Cloud and how to ensure your data is preserved during deployments.
@@ -44,7 +66,14 @@ The database connection is handled via environment variables that Strapi Cloud s
 For local development, Strapi uses SQLite by default (`.tmp/data.db`). This file is:
 - **Not committed to git** (in `.gitignore`)
 - **Local only** - each developer has their own
-- **Can be deleted** - safe to remove for a fresh start
+- **Persists between restarts** - your data is kept when you restart the server
+- **Can be deleted** - safe to remove for a fresh start (but you'll lose local data)
+
+**To preserve data in local development**:
+1. Don't delete the `.tmp/` directory
+2. The database file (`.tmp/data.db`) contains all your local data
+3. New entries added through admin panel are automatically saved
+4. Seed scripts only create missing entries, never delete or overwrite
 
 ## Deployment Best Practices
 
@@ -75,10 +104,20 @@ Your content type schemas are defined in code (`src/api/*/content-types/*/schema
 ### 3. Seed Data
 
 The `bootstrap` function in `src/index.ts` automatically seeds translations on startup. This:
-- ✅ Only creates missing translations
-- ✅ Updates existing translations if needed
-- ✅ Never deletes existing data
-- ✅ Runs on every deployment
+- ✅ **Only creates missing translations** - never overwrites existing data
+- ✅ **Preserves manual changes** - any translations added or modified through the admin panel are kept
+- ✅ **Never deletes existing data** - your data is safe
+- ✅ **Runs on every deployment** - ensures all required translations exist
+- ⚠️ **Does NOT update existing translations by default** - to preserve your manual changes
+
+**Important**: The seed script is designed to be **non-destructive**. It will:
+- Create new translation entries that don't exist
+- Skip existing entries to preserve any manual modifications
+- Never delete any data
+
+If you need to update existing translations from the seed data, you can:
+1. Manually update them through the admin panel
+2. Or run the seed script with `updateExisting: true` option (not recommended for production)
 
 ### 4. Media Files
 
@@ -176,13 +215,51 @@ To export your data:
 - Check API endpoint is accessible
 - Verify CORS settings allow your frontend
 
+## Preserving New Data
+
+### How to Keep New Data Safe
+
+1. **Database Persistence**:
+   - **Local Development**: SQLite database (`.tmp/data.db`) persists between restarts unless deleted
+   - **Deployment**: Managed PostgreSQL database persists independently of deployments
+   - **Never commit database files**: They're in `.gitignore` and should stay local
+
+2. **Translation Data**:
+   - New translations added through admin panel are **automatically preserved**
+   - Seed script only creates missing entries, never overwrites existing ones
+   - Manual changes are safe from being overwritten
+
+3. **Content Entries**:
+   - All content created through admin panel or API is stored in the database
+   - Database persists across deployments
+   - No data loss during code deployments
+
+4. **Media Files**:
+   - **Local**: Stored in `public/uploads/` (not committed to git)
+   - **Deployment**: Stored in cloud storage (persists across deployments)
+
+### Best Practices
+
+✅ **DO**:
+- Add new content through admin panel - it will persist
+- Use the database for all data storage
+- Keep `.tmp/` and `public/uploads/` in `.gitignore`
+- Let seed scripts only create missing entries
+
+❌ **DON'T**:
+- Commit database files (`.tmp/data.db`)
+- Commit uploaded media files
+- Delete `.tmp/` directory unless you want a fresh start
+- Modify seed scripts to delete data
+
 ## Summary
 
 ✅ **Your data is safe**: Strapi Cloud uses a managed database that persists independently  
 ✅ **Automatic migrations**: Schema changes are handled automatically  
-✅ **Seed scripts run safely**: Bootstrap function only adds/updates, never deletes  
+✅ **Seed scripts are safe**: Bootstrap function only creates missing entries, never deletes or overwrites  
+✅ **Manual changes preserved**: Any data added through admin panel is never overwritten  
 ✅ **Media files persist**: Uploaded files are stored in cloud storage  
 ✅ **Backups included**: Automatic daily backups are created  
 
-**Key Takeaway**: On Strapi Cloud, your database and media files are separate from your application code and persist across all deployments. Only your code changes when you deploy.
+**Key Takeaway**: On Strapi Cloud, your database and media files are separate from your application code and persist across all deployments. Only your code changes when you deploy. **New data added through the admin panel or API is automatically preserved and never deleted by seed scripts.**
 

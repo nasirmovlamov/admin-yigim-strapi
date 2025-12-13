@@ -23,11 +23,19 @@ try {
   }
 }
 
-export async function seedTranslations(strapi: any) {
+/**
+ * Seed translations - only creates missing entries, never deletes or overwrites existing data
+ * @param strapi - Strapi instance
+ * @param options - Options for seeding behavior
+ * @param options.updateExisting - If true, updates existing translations (default: false to preserve manual changes)
+ */
+export async function seedTranslations(strapi: any, options: { updateExisting?: boolean } = {}) {
   try {
-    strapi.log.info('Starting translation seeding...');
+    const { updateExisting = false } = options;
+    strapi.log.info(`Starting translation seeding... (updateExisting: ${updateExisting})`);
 
     let created = 0;
+    let skipped = 0;
     let updated = 0;
     let errors = 0;
 
@@ -54,7 +62,7 @@ export async function seedTranslations(strapi: any) {
         };
 
         if (existing.length === 0) {
-          // Create new entry
+          // Create new entry - only if it doesn't exist
           const createdEntry = await strapi.entityService.create('api::translation.translation', {
             data: translationEntry,
           });
@@ -69,28 +77,35 @@ export async function seedTranslations(strapi: any) {
           }
           created++;
         } else {
-          // Update existing entry
-          await strapi.entityService.update('api::translation.translation', existing[0].id, {
-            data: translationEntry,
-          });
-          // Ensure it's published
-          try {
-            await strapi.documents('api::translation.translation').publish({ id: existing[0].id });
-          } catch (publishError) {
+          // Entry exists - only update if explicitly requested
+          if (updateExisting) {
             await strapi.entityService.update('api::translation.translation', existing[0].id, {
-              data: { publishedAt: new Date() },
+              data: translationEntry,
             });
+            // Ensure it's published
+            try {
+              await strapi.documents('api::translation.translation').publish({ id: existing[0].id });
+            } catch (publishError) {
+              await strapi.entityService.update('api::translation.translation', existing[0].id, {
+                data: { publishedAt: new Date() },
+              });
+            }
+            updated++;
+          } else {
+            // Skip existing entries to preserve manual changes
+            skipped++;
           }
-          updated++;
         }
       } catch (error: any) {
-        strapi.log.error(`Error creating ${namespace}.${key}:`, error.message);
+        strapi.log.error(`Error processing ${namespace}.${key}:`, error.message);
         errors++;
       }
     }
 
-    strapi.log.info(`Translation seeding completed: ${created} created, ${updated} updated, ${errors} errors`);
-    return { created, updated, errors };
+    strapi.log.info(
+      `Translation seeding completed: ${created} created, ${skipped} skipped (preserved), ${updated} updated, ${errors} errors`
+    );
+    return { created, skipped, updated, errors };
   } catch (error: any) {
     strapi.log.error('Translation seeding failed:', error);
     throw error;
