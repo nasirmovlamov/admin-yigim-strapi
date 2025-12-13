@@ -376,7 +376,15 @@ async function seedTranslations() {
   process.exit(0);
 }
 
-seedTranslations().catch((error) => {
-  console.error('Seeding failed:', error);
-  process.exit(1);
-});
+// Export translationData for use in bootstrap
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports.translationData = translationData;
+}
+
+// Only run if called directly (not when imported)
+if (require.main === module) {
+  seedTranslations().catch((error) => {
+    console.error('Seeding failed:', error);
+    process.exit(1);
+  });
+}

@@ -1,11 +1,25 @@
 'use strict';
 
+// NOTE: This seed script is for example content types (article, author, category, etc.)
+// These content types have been removed from this project.
+// This script is kept for reference but is disabled.
+// Use scripts/seed-translations.js instead for seeding translation data.
+
 const fs = require('fs-extra');
 const path = require('path');
 const mime = require('mime-types');
-const { categories, authors, articles, global, about } = require('../data/data.json');
+
+// Disabled - example content types removed
+// const { categories, authors, articles, global, about } = require('../data/data.json');
 
 async function seedExampleApp() {
+  // This script is disabled - example content types have been removed
+  console.log('Example seed script is disabled. Example content types (article, author, category, etc.) have been removed.');
+  console.log('Use "npm run seed:translations" to seed translation data instead.');
+  return;
+  
+  // Disabled code below:
+  /*
   const shouldImportSeedData = await isFirstRun();
 
   if (shouldImportSeedData) {
@@ -22,6 +36,7 @@ async function seedExampleApp() {
       'Seed data has already been imported. We cannot reimport unless you clear your database first.'
     );
   }
+  */
 }
 
 async function isFirstRun() {

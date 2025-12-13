@@ -7,7 +7,7 @@ export default [
       contentSecurityPolicy: {
         useDefaults: true,
         directives: {
-          'connect-src': ["'self'", 'http://localhost:3000', 'http://localhost:3001'],
+          'connect-src': ["'self'", 'http://localhost:3000', 'http://localhost:3001', 'https://yigim-dashboard-fe.vercel.app'],
           upgradeInsecureRequests: null,
         },
       },
@@ -17,7 +17,11 @@ export default [
     name: 'strapi::cors',
     config: {
       enabled: true,
-      origin: ['http://localhost:3000', 'http://localhost:3001'],
+      origin: [
+        'http://localhost:3000', 
+        'http://localhost:3001',
+        'https://yigim-dashboard-fe.vercel.app', // Production frontend on Vercel
+      ],
       headers: [
         'Content-Type',
         'Authorization',
