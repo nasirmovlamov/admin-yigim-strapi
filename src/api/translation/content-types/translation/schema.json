@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "translations",
+  "info": {
+    "singularName": "translation",
+    "pluralName": "translations",
+    "displayName": "Translation",
+    "description": "Manage translations for the dashboard"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "key": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "namespace": {
+      "type": "string",
+      "required": true,
+      "default": "common"
+    },
+    "value_az": {
+      "type": "text",
+      "required": false
+    },
+    "value_en": {
+      "type": "text",
+      "required": false
+    },
+    "value_ru": {
+      "type": "text",
+      "required": false
+    },
+    "value_tr": {
+      "type": "text",
+      "required": false
+    },
+    "value_de": {
+      "type": "text",
+      "required": false
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}
+
