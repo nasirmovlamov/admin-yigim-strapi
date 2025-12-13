@@ -6,21 +6,79 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
-// Load translation data from JSON file
-let translationData: any[] = [];
-try {
-  const dataPath = path.join(__dirname, '../../data/translation-data.json');
-  const dataContent = fs.readFileSync(dataPath, 'utf-8');
-  translationData = JSON.parse(dataContent);
-} catch (error: any) {
-  console.warn('Could not load translation data from JSON file:', error.message);
-  // Fallback: try to load from seed script
-  try {
-    const seedModule = require('../../scripts/seed-translations.js');
-    translationData = seedModule.translationData || [];
-  } catch (fallbackError) {
-    console.error('Could not load translation data from any source');
+/**
+ * Load translation data with multiple fallback strategies
+ * This function tries multiple paths to find the translation data
+ * to work in both local development and Strapi Cloud deployments
+ */
+function loadTranslationData(): any[] {
+  // Strategy 1: Try to load from JSON file (multiple possible paths)
+  const possibleJsonPaths = [
+    path.join(process.cwd(), 'data', 'translation-data.json'),
+    path.join(process.cwd(), 'admin-yigim-strapi', 'data', 'translation-data.json'),
+    path.resolve(process.cwd(), 'data', 'translation-data.json'),
+    path.resolve(process.cwd(), 'admin-yigim-strapi', 'data', 'translation-data.json'),
+  ];
+
+  for (const jsonPath of possibleJsonPaths) {
+    try {
+      if (fs.existsSync(jsonPath)) {
+        const dataContent = fs.readFileSync(jsonPath, 'utf-8');
+        const parsed = JSON.parse(dataContent);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          console.log(`✓ Loaded ${parsed.length} translations from: ${jsonPath}`);
+          return parsed;
+        }
+      }
+    } catch (error: any) {
+      // Continue to next path
+    }
   }
+
+  // Strategy 2: Try to load from seed script using require (works in compiled code)
+  const possibleScriptPaths = [
+    path.join(process.cwd(), 'scripts', 'seed-translations.js'),
+    path.join(process.cwd(), 'admin-yigim-strapi', 'scripts', 'seed-translations.js'),
+    path.resolve(process.cwd(), 'scripts', 'seed-translations.js'),
+    path.resolve(process.cwd(), 'admin-yigim-strapi', 'scripts', 'seed-translations.js'),
+  ];
+
+  for (const scriptPath of possibleScriptPaths) {
+    try {
+      if (fs.existsSync(scriptPath)) {
+        // Clear require cache to ensure fresh load
+        try {
+          const resolvedPath = require.resolve(scriptPath);
+          if (require.cache[resolvedPath]) {
+            delete require.cache[resolvedPath];
+          }
+        } catch (resolveError) {
+          // If resolve fails, continue anyway with direct require
+        }
+        const seedModule = require(scriptPath);
+        if (seedModule && seedModule.translationData && Array.isArray(seedModule.translationData) && seedModule.translationData.length > 0) {
+          console.log(`✓ Loaded ${seedModule.translationData.length} translations from: ${scriptPath}`);
+          return seedModule.translationData;
+        }
+      }
+    } catch (error: any) {
+      // Continue to next path
+    }
+  }
+
+  // Strategy 3: Try require with just the module name (if it's in node_modules or root)
+  try {
+    const seedModule = require('./../../scripts/seed-translations.js');
+    if (seedModule && seedModule.translationData && Array.isArray(seedModule.translationData) && seedModule.translationData.length > 0) {
+      console.log(`✓ Loaded translations via relative require`);
+      return seedModule.translationData;
+    }
+  } catch (error) {
+    // Ignore - this is expected to fail in some environments
+  }
+
+  console.error('✗ Could not load translation data from any source');
+  return [];
 }
 
 /**
@@ -33,6 +91,22 @@ export async function seedTranslations(strapi: any, options: { updateExisting?: 
   try {
     const { updateExisting = false } = options;
     strapi.log.info(`Starting translation seeding... (updateExisting: ${updateExisting})`);
+
+    // Load translation data dynamically
+    const translationData = loadTranslationData();
+    
+    if (!translationData || translationData.length === 0) {
+      strapi.log.error('No translation data found! Cannot seed translations.');
+      return { created: 0, skipped: 0, updated: 0, errors: 1 };
+    }
+
+    strapi.log.info(`Loaded ${translationData.length} translation entries to process`);
+
+    // Verify entityService is available
+    if (!strapi.entityService) {
+      strapi.log.error('EntityService is not available. Database may not be connected yet.');
+      return { created: 0, skipped: 0, updated: 0, errors: 1 };
+    }
 
     let created = 0;
     let skipped = 0;

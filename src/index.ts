@@ -21,21 +21,48 @@ export default {
     // Auto-seed translations on startup
     // This will ONLY create missing translations - it will NOT overwrite existing data
     // This preserves any manual changes or new translations added through the admin panel
+    
+    // Wait a bit to ensure database is fully connected
+    // This is especially important for Strapi Cloud deployments
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    
     try {
-      strapi.log.info('Checking and seeding translations...');
+      strapi.log.info('=== Starting translation seeding on bootstrap ===');
+      
+      // Verify database connection
+      if (!strapi.db) {
+        strapi.log.warn('Database connection not available yet, waiting...');
+        await new Promise(resolve => setTimeout(resolve, 2000));
+      }
+      
       const result = await seedTranslations(strapi, { updateExisting: false });
-      if (result.created > 0) {
+      
+      if (result.errors > 0) {
+        strapi.log.warn(
+          `Translation seeding completed with ${result.errors} errors: ${result.created} created, ${result.skipped} preserved, ${result.updated} updated`
+        );
+      } else if (result.created > 0) {
         strapi.log.info(
-          `Translation seeding completed: ${result.created} created, ${result.skipped} preserved (existing entries not modified)`
+          `✓ Translation seeding successful: ${result.created} created, ${result.skipped} preserved (existing entries not modified)`
         );
       } else if (result.skipped > 0) {
-        strapi.log.info(`All translations exist. ${result.skipped} entries preserved (not modified).`);
+        strapi.log.info(`✓ All translations exist. ${result.skipped} entries preserved (not modified).`);
       } else {
-        strapi.log.info('No new translations to seed.');
+        strapi.log.warn('No translations were processed. This might indicate a problem with data loading.');
       }
+      
+      strapi.log.info('=== Translation seeding completed ===');
     } catch (error: any) {
-      // Don't crash the app if seeding fails
-      strapi.log.error('Failed to seed translations on bootstrap:', error);
+      // Don't crash the app if seeding fails, but log the full error
+      strapi.log.error('✗ Failed to seed translations on bootstrap');
+      strapi.log.error('Error details:', error);
+      if (error.stack) {
+        strapi.log.error('Stack trace:', error.stack);
+      }
+      // Re-throw in development to help debugging, but catch in production
+      if (process.env.NODE_ENV === 'development') {
+        throw error;
+      }
     }
   },
 };
