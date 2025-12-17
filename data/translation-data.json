@@ -2660,5 +2660,557 @@
       "tr": "AM/PM",
       "de": "AM/PM"
     }
+  },
+
+  {
+    "key": "close",
+    "namespace": "common",
+    "translations": { "az": "Bağla", "en": "Close", "ru": "Закрыть", "tr": "Kapat", "de": "Schließen" }
+  },
+  {
+    "key": "back",
+    "namespace": "common",
+    "translations": { "az": "Geri", "en": "Back", "ru": "Назад", "tr": "Geri", "de": "Zurück" }
+  },
+  {
+    "key": "id",
+    "namespace": "common",
+    "translations": { "az": "ID", "en": "ID", "ru": "ID", "tr": "ID", "de": "ID" }
+  },
+  {
+    "key": "noDataFound",
+    "namespace": "common",
+    "translations": { "az": "Məlumat tapılmadı", "en": "No data found", "ru": "Данные не найдены", "tr": "Veri bulunamadı", "de": "Keine Daten gefunden" }
+  },
+  {
+    "key": "profile",
+    "namespace": "common",
+    "translations": { "az": "Profil", "en": "Profile", "ru": "Профиль", "tr": "Profil", "de": "Profil" }
+  },
+  {
+    "key": "logout",
+    "namespace": "common",
+    "translations": { "az": "Tərk et", "en": "Logout", "ru": "Выйти", "tr": "Çıkış", "de": "Abmelden" }
+  },
+  {
+    "key": "copyright",
+    "namespace": "common",
+    "translations": {
+      "az": "Copyright © Yigim 2025",
+      "en": "Copyright © Yigim 2025",
+      "ru": "Copyright © Yigim 2025",
+      "tr": "Copyright © Yigim 2025",
+      "de": "Copyright © Yigim 2025"
+    }
+  },
+  {
+    "key": "searchType",
+    "namespace": "common",
+    "translations": { "az": "Axtarış növü", "en": "Search type", "ru": "Тип поиска", "tr": "Arama türü", "de": "Suchtyp" }
+  },
+  {
+    "key": "searchPlaceholder",
+    "namespace": "common",
+    "translations": { "az": "Axtarış...", "en": "Search...", "ru": "Поиск...", "tr": "Ara...", "de": "Suchen..." }
+  },
+  {
+    "key": "search",
+    "namespace": "common",
+    "translations": { "az": "Axtarış", "en": "Search", "ru": "Поиск", "tr": "Ara", "de": "Suche" }
+  },
+  {
+    "key": "noResultsFound",
+    "namespace": "common",
+    "translations": { "az": "Nəticə tapılmadı", "en": "No results found", "ru": "Результаты не найдены", "tr": "Sonuç bulunamadı", "de": "Keine Ergebnisse gefunden" }
+  },
+  {
+    "key": "selectLanguage",
+    "namespace": "common",
+    "translations": { "az": "Dil seçin", "en": "Select language", "ru": "Выберите язык", "tr": "Dil seçin", "de": "Sprache auswählen" }
+  },
+  {
+    "key": "previous",
+    "namespace": "common",
+    "translations": { "az": "Əvvəlki", "en": "Previous", "ru": "Назад", "tr": "Önceki", "de": "Zurück" }
+  },
+  {
+    "key": "next",
+    "namespace": "common",
+    "translations": { "az": "Növbəti", "en": "Next", "ru": "Далее", "tr": "Sonraki", "de": "Weiter" }
+  },
+  {
+    "key": "orderNewest",
+    "namespace": "common",
+    "translations": { "az": "Ən son", "en": "Newest", "ru": "Сначала новые", "tr": "En yeni", "de": "Neueste" }
+  },
+  {
+    "key": "orderOldest",
+    "namespace": "common",
+    "translations": { "az": "Ən əvvəl", "en": "Oldest", "ru": "Сначала старые", "tr": "En eski", "de": "Älteste" }
+  },
+  {
+    "key": "reset",
+    "namespace": "common",
+    "translations": { "az": "Sıfırla", "en": "Reset", "ru": "Сбросить", "tr": "Sıfırla", "de": "Zurücksetzen" }
+  },
+  {
+    "key": "export",
+    "namespace": "common",
+    "translations": { "az": "Export", "en": "Export", "ru": "Экспорт", "tr": "Dışa aktar", "de": "Export" }
+  },
+  {
+    "key": "exporting",
+    "namespace": "common",
+    "translations": { "az": "Export edilir...", "en": "Exporting...", "ru": "Экспортируется...", "tr": "Dışa aktarılıyor...", "de": "Wird exportiert..." }
+  },
+  {
+    "key": "exportTitle",
+    "namespace": "common",
+    "translations": { "az": "Export et", "en": "Export", "ru": "Экспорт", "tr": "Dışa aktar", "de": "Export" }
+  },
+  {
+    "key": "exportChooseFileType",
+    "namespace": "common",
+    "translations": { "az": "Fayl tipini seçin", "en": "Select file type", "ru": "Выберите тип файла", "tr": "Dosya türünü seçin", "de": "Dateityp auswählen" }
+  },
+  {
+    "key": "exportSuccess",
+    "namespace": "common",
+    "translations": {
+      "az": "Export uğurla yaradıldı",
+      "en": "Export created successfully",
+      "ru": "Экспорт успешно создан",
+      "tr": "Dışa aktarma başarıyla oluşturuldu",
+      "de": "Export erfolgreich erstellt"
+    }
+  },
+  {
+    "key": "exportError",
+    "namespace": "common",
+    "translations": {
+      "az": "Export zamanı xəta baş verdi",
+      "en": "An error occurred during export",
+      "ru": "Произошла ошибка при экспорте",
+      "tr": "Dışa aktarma sırasında hata oluştu",
+      "de": "Beim Export ist ein Fehler aufgetreten"
+    }
+  },
+  {
+    "key": "paymentActionTriggered",
+    "namespace": "common",
+    "translations": {
+      "az": "{0} icra olundu: #{1}",
+      "en": "{0} triggered for #{1}",
+      "ru": "Действие {0} выполнено для #{1}",
+      "tr": "{0} tetiklendi: #{1}",
+      "de": "{0} ausgelöst für #{1}"
+    }
+  },
+  {
+    "key": "closeExportModal",
+    "namespace": "common",
+    "translations": { "az": "Export modali bağla", "en": "Close export modal", "ru": "Закрыть окно экспорта", "tr": "Dışa aktarma penceresini kapat", "de": "Export-Dialog schließen" }
+  },
+  {
+    "key": "pageSize",
+    "namespace": "common",
+    "translations": { "az": "Səhifə ölçüsü", "en": "Page size", "ru": "Размер страницы", "tr": "Sayfa boyutu", "de": "Seitengröße" }
+  },
+  {
+    "key": "resultsRange",
+    "namespace": "common",
+    "translations": {
+      "az": "{0}-{1} arasında {2} nəticədən",
+      "en": "{0}-{1} of {2} results",
+      "ru": "{0}-{1} из {2}",
+      "tr": "{0}-{1} / {2} sonuç",
+      "de": "{0}-{1} von {2} Ergebnissen"
+    }
+  },
+  {
+    "key": "total",
+    "namespace": "common",
+    "translations": { "az": "Cəmi", "en": "Total", "ru": "Итого", "tr": "Toplam", "de": "Gesamt" }
+  },
+  {
+    "key": "unauthorizedMessage",
+    "namespace": "common",
+    "translations": {
+      "az": "Bu səhifəyə daxil olmaq üçün icazəniz yoxdur.",
+      "en": "You do not have permission to access this page.",
+      "ru": "У вас нет доступа к этой странице.",
+      "tr": "Bu sayfaya erişim izniniz yok.",
+      "de": "Sie haben keine Berechtigung, auf diese Seite zuzugreifen."
+    }
+  },
+  {
+    "key": "unauthorizedHelp",
+    "namespace": "common",
+    "translations": {
+      "az": "Zəhmət olmasa, daxil olun və ya giriş üçün inzibatçı ilə əlaqə saxlayın.",
+      "en": "Please log in or contact an administrator for access.",
+      "ru": "Пожалуйста, войдите или обратитесь к администратору для доступа.",
+      "tr": "Lütfen giriş yapın veya erişim için yöneticiyle iletişime geçin.",
+      "de": "Bitte melden Sie sich an oder wenden Sie sich für den Zugriff an einen Administrator."
+    }
+  },
+  {
+    "key": "home",
+    "namespace": "common",
+    "translations": { "az": "Əsas səhifə", "en": "Home", "ru": "Главная", "tr": "Ana sayfa", "de": "Startseite" }
+  },
+  {
+    "key": "login",
+    "namespace": "common",
+    "translations": { "az": "Daxil ol", "en": "Login", "ru": "Войти", "tr": "Giriş yap", "de": "Anmelden" }
+  },
+
+  {
+    "key": "accountingMenu",
+    "namespace": "navigation",
+    "translations": { "az": "Mühasibatlıq", "en": "Accounting", "ru": "Учёт", "tr": "Muhasebe", "de": "Buchhaltung" }
+  },
+  {
+    "key": "accountingSubtitle",
+    "namespace": "navigation",
+    "translations": { "az": "Əməliyyatlara keçid", "en": "Go to transactions", "ru": "Перейти к транзакциям", "tr": "İşlemlere git", "de": "Zu Transaktionen wechseln" }
+  },
+  {
+    "key": "transactionsMenu",
+    "namespace": "navigation",
+    "translations": { "az": "Əməliyyatlar", "en": "Transactions", "ru": "Транзакции", "tr": "İşlemler", "de": "Transaktionen" }
+  },
+  {
+    "key": "exportsMenu",
+    "namespace": "navigation",
+    "translations": { "az": "Exportlar", "en": "Exports", "ru": "Экспорты", "tr": "Dışa aktarmalar", "de": "Exporte" }
+  },
+
+  {
+    "key": "userDetailsTitle",
+    "namespace": "users",
+    "translations": { "az": "İstifadəçi Məlumatları", "en": "User details", "ru": "Данные пользователя", "tr": "Kullanıcı bilgileri", "de": "Benutzerdetails" }
+  },
+  {
+    "key": "roles",
+    "namespace": "users",
+    "translations": { "az": "Rollar", "en": "Roles", "ru": "Роли", "tr": "Roller", "de": "Rollen" }
+  },
+  {
+    "key": "addUser",
+    "namespace": "users",
+    "translations": { "az": "İstifadəçi əlavə et", "en": "Add user", "ru": "Добавить пользователя", "tr": "Kullanıcı ekle", "de": "Benutzer hinzufügen" }
+  },
+
+  {
+    "key": "email",
+    "namespace": "auth",
+    "translations": { "az": "Email ünvanı", "en": "Email address", "ru": "Электронная почта", "tr": "E-posta adresi", "de": "E-Mail-Adresse" }
+  },
+  {
+    "key": "fullName",
+    "namespace": "auth",
+    "translations": { "az": "Tam ad", "en": "Full name", "ru": "Полное имя", "tr": "Ad soyad", "de": "Vollständiger Name" }
+  },
+  {
+    "key": "phoneNumber",
+    "namespace": "auth",
+    "translations": { "az": "Telefon nömrəsi", "en": "Phone number", "ru": "Номер телефона", "tr": "Telefon numarası", "de": "Telefonnummer" }
+  },
+  {
+    "key": "registerFailed",
+    "namespace": "auth",
+    "translations": { "az": "Qeydiyyat uğursuz oldu", "en": "Registration failed", "ru": "Регистрация не удалась", "tr": "Kayıt başarısız", "de": "Registrierung fehlgeschlagen" }
+  },
+  {
+    "key": "haveAccount",
+    "namespace": "auth",
+    "translations": { "az": "Artıq hesabınız var?", "en": "Already have an account?", "ru": "Уже есть аккаунт?", "tr": "Zaten hesabınız var mı?", "de": "Haben Sie bereits ein Konto?" }
+  },
+  {
+    "key": "login",
+    "namespace": "auth",
+    "translations": { "az": "Daxil ol", "en": "Login", "ru": "Войти", "tr": "Giriş yap", "de": "Anmelden" }
+  },
+
+  {
+    "key": "paymentDetailsFetchFailed",
+    "namespace": "acquiring",
+    "translations": { "az": "Ödəniş detalları gətirilə bilmədi", "en": "Failed to fetch payment details", "ru": "Не удалось получить детали платежа", "tr": "Ödeme detayları alınamadı", "de": "Zahlungsdetails konnten nicht abgerufen werden" }
+  },
+  {
+    "key": "paymentDetailsLoadFailed",
+    "namespace": "acquiring",
+    "translations": { "az": "Ödəniş detalları yüklənə bilmədi", "en": "Payment details could not be loaded", "ru": "Не удалось загрузить детали платежа", "tr": "Ödeme detayları yüklenemedi", "de": "Zahlungsdetails konnten nicht geladen werden" }
+  },
+  {
+    "key": "paymentDetailsTitle",
+    "namespace": "acquiring",
+    "translations": { "az": "Ödəniş detalları", "en": "Payment details", "ru": "Детали платежа", "tr": "Ödeme detayları", "de": "Zahlungsdetails" }
+  },
+  {
+    "key": "paymentId",
+    "namespace": "acquiring",
+    "translations": { "az": "Payment ID", "en": "Payment ID", "ru": "ID платежа", "tr": "Ödeme ID", "de": "Zahlungs-ID" }
+  },
+  {
+    "key": "serial",
+    "namespace": "acquiring",
+    "translations": { "az": "Serial", "en": "Serial", "ru": "Серийный номер", "tr": "Seri", "de": "Seriennummer" }
+  },
+  {
+    "key": "datetime",
+    "namespace": "acquiring",
+    "translations": { "az": "Tarix və saat", "en": "Date & time", "ru": "Дата и время", "tr": "Tarih ve saat", "de": "Datum & Uhrzeit" }
+  },
+  {
+    "key": "originator",
+    "namespace": "acquiring",
+    "translations": { "az": "Originator", "en": "Originator", "ru": "Отправитель", "tr": "Gönderen", "de": "Absender" }
+  },
+  {
+    "key": "reference",
+    "namespace": "acquiring",
+    "translations": { "az": "Reference", "en": "Reference", "ru": "Ссылка", "tr": "Referans", "de": "Referenz" }
+  },
+  {
+    "key": "details",
+    "namespace": "acquiring",
+    "translations": { "az": "Detallar", "en": "Details", "ru": "Детали", "tr": "Detaylar", "de": "Details" }
+  },
+  {
+    "key": "copy",
+    "namespace": "acquiring",
+    "translations": { "az": "Kopyala", "en": "Copy", "ru": "Копировать", "tr": "Kopyala", "de": "Kopieren" }
+  },
+  {
+    "key": "copyPaymentIdTitle",
+    "namespace": "acquiring",
+    "translations": { "az": "Payment ID kopyala", "en": "Copy Payment ID", "ru": "Копировать ID платежа", "tr": "Ödeme ID kopyala", "de": "Zahlungs-ID kopieren" }
+  },
+  {
+    "key": "copyContentTitle",
+    "namespace": "acquiring",
+    "translations": { "az": "Məzmunu kopyala", "en": "Copy content", "ru": "Копировать содержимое", "tr": "İçeriği kopyala", "de": "Inhalt kopieren" }
+  },
+  {
+    "key": "paymentIdCopied",
+    "namespace": "acquiring",
+    "translations": { "az": "Payment ID kopyalandı", "en": "Payment ID copied", "ru": "ID платежа скопирован", "tr": "Ödeme ID kopyalandı", "de": "Zahlungs-ID kopiert" }
+  },
+  {
+    "key": "paymentIdCopyFailed",
+    "namespace": "acquiring",
+    "translations": { "az": "Payment ID kopyalanmadı", "en": "Failed to copy Payment ID", "ru": "Не удалось скопировать ID платежа", "tr": "Ödeme ID kopyalanamadı", "de": "Zahlungs-ID konnte nicht kopiert werden" }
+  },
+  {
+    "key": "contentCopied",
+    "namespace": "acquiring",
+    "translations": { "az": "Məzmun kopyalandı", "en": "Content copied", "ru": "Содержимое скопировано", "tr": "İçerik kopyalandı", "de": "Inhalt kopiert" }
+  },
+  {
+    "key": "contentCopyFailed",
+    "namespace": "acquiring",
+    "translations": { "az": "Məzmun kopyalanmadı", "en": "Failed to copy content", "ru": "Не удалось скопировать содержимое", "tr": "İçerik kopyalanamadı", "de": "Inhalt konnte nicht kopiert werden" }
+  },
+  {
+    "key": "tableHeader.number",
+    "namespace": "acquiring",
+    "translations": { "az": "№", "en": "№", "ru": "№", "tr": "№", "de": "№" }
+  },
+  {
+    "key": "uid",
+    "namespace": "acquiring",
+    "translations": { "az": "UID", "en": "UID", "ru": "UID", "tr": "UID", "de": "UID" }
+  },
+  {
+    "key": "terminal",
+    "namespace": "acquiring",
+    "translations": { "az": "Terminal", "en": "Terminal", "ru": "Терминал", "tr": "Terminal", "de": "Terminal" }
+  },
+  {
+    "key": "merchant",
+    "namespace": "acquiring",
+    "translations": { "az": "Merchant", "en": "Merchant", "ru": "Торговец", "tr": "Satıcı", "de": "Händler" }
+  },
+  {
+    "key": "merchants",
+    "namespace": "acquiring",
+    "translations": { "az": "Merchantlər", "en": "Merchants", "ru": "Торговцы", "tr": "Satıcılar", "de": "Händler" }
+  },
+  {
+    "key": "amount",
+    "namespace": "acquiring",
+    "translations": { "az": "Məbləğ", "en": "Amount", "ru": "Сумма", "tr": "Tutar", "de": "Betrag" }
+  },
+  {
+    "key": "fee",
+    "namespace": "acquiring",
+    "translations": { "az": "Komissiya", "en": "Fee", "ru": "Комиссия", "tr": "Ücret", "de": "Gebühr" }
+  },
+  {
+    "key": "currency",
+    "namespace": "acquiring",
+    "translations": { "az": "Valyuta", "en": "Currency", "ru": "Валюта", "tr": "Para birimi", "de": "Währung" }
+  },
+  {
+    "key": "date",
+    "namespace": "acquiring",
+    "translations": { "az": "Tarix", "en": "Date", "ru": "Дата", "tr": "Tarih", "de": "Datum" }
+  },
+  {
+    "key": "actions.cancel",
+    "namespace": "acquiring",
+    "translations": { "az": "Ləğv et", "en": "Cancel", "ru": "Отменить", "tr": "İptal", "de": "Abbrechen" }
+  },
+  {
+    "key": "actions.accept",
+    "namespace": "acquiring",
+    "translations": { "az": "Qəbul et", "en": "Accept", "ru": "Принять", "tr": "Kabul et", "de": "Annehmen" }
+  },
+  {
+    "key": "actions.repeat",
+    "namespace": "acquiring",
+    "translations": { "az": "Təkrarla", "en": "Repeat", "ru": "Повторить", "tr": "Tekrarla", "de": "Wiederholen" }
+  },
+  {
+    "key": "confirmationTitle",
+    "namespace": "acquiring",
+    "translations": { "az": "Təsdiq", "en": "Confirmation", "ru": "Подтверждение", "tr": "Onay", "de": "Bestätigung" }
+  },
+  {
+    "key": "confirmCancelPayment",
+    "namespace": "acquiring",
+    "translations": {
+      "az": "Ödənişi ləğv etmək istədiyinizə əminsiniz? {0}",
+      "en": "Are you sure you want to cancel payment {0}?",
+      "ru": "Вы уверены, что хотите отменить платеж {0}?",
+      "tr": "Ödemeyi iptal etmek istediğinizden emin misiniz? {0}",
+      "de": "Möchten Sie die Zahlung {0} wirklich stornieren?"
+    }
+  },
+  {
+    "key": "confirmAcceptPayment",
+    "namespace": "acquiring",
+    "translations": {
+      "az": "Ödənişi qəbul etmək istədiyinizə əminsiniz? {0}",
+      "en": "Are you sure you want to accept payment {0}?",
+      "ru": "Вы уверены, что хотите принять платеж {0}?",
+      "tr": "Ödemeyi kabul etmek istediğinizden emin misiniz? {0}",
+      "de": "Möchten Sie die Zahlung {0} wirklich annehmen?"
+    }
+  },
+  {
+    "key": "confirmRepeatPayment",
+    "namespace": "acquiring",
+    "translations": {
+      "az": "Ödənişi təkrarlamaq istədiyinizə əminsiniz? {0}",
+      "en": "Are you sure you want to repeat payment {0}?",
+      "ru": "Вы уверены, что хотите повторить платеж {0}?",
+      "tr": "Ödemeyi tekrarlamak istediğinizden emin misiniz? {0}",
+      "de": "Möchten Sie die Zahlung {0} wirklich wiederholen?"
+    }
+  },
+
+  {
+    "key": "magnetTransactionTitle",
+    "namespace": "transactions",
+    "translations": { "az": "Magnet əməliyyatı", "en": "Magnet transaction", "ru": "Магнитная транзакция", "tr": "Magnet işlemi", "de": "Magnet-Transaktion" }
+  },
+  {
+    "key": "uid",
+    "namespace": "transactions",
+    "translations": { "az": "UID", "en": "UID", "ru": "UID", "tr": "UID", "de": "UID" }
+  },
+  {
+    "key": "terminal",
+    "namespace": "transactions",
+    "translations": { "az": "Terminal", "en": "Terminal", "ru": "Терминал", "tr": "Terminal", "de": "Terminal" }
+  },
+  {
+    "key": "copyUidTitle",
+    "namespace": "transactions",
+    "translations": { "az": "UID kopyala", "en": "Copy UID", "ru": "Копировать UID", "tr": "UID kopyala", "de": "UID kopieren" }
+  },
+  {
+    "key": "copySuccess",
+    "namespace": "transactions",
+    "translations": { "az": "Kopyalandı", "en": "Copied", "ru": "Скопировано", "tr": "Kopyalandı", "de": "Kopiert" }
+  },
+  {
+    "key": "referenceMissing",
+    "namespace": "transactions",
+    "translations": { "az": "Reference yoxdur", "en": "Reference is missing", "ru": "Отсутствует reference", "tr": "Referans eksik", "de": "Referenz fehlt" }
+  },
+  {
+    "key": "requestSent",
+    "namespace": "transactions",
+    "translations": { "az": "Sorğu göndərildi", "en": "Request sent", "ru": "Запрос отправлен", "tr": "İstek gönderildi", "de": "Anfrage gesendet" }
+  },
+  {
+    "key": "actionFailed",
+    "namespace": "transactions",
+    "translations": { "az": "Əməliyyat uğursuz oldu", "en": "Action failed", "ru": "Действие не удалось", "tr": "İşlem başarısız", "de": "Aktion fehlgeschlagen" }
+  },
+  {
+    "key": "reference",
+    "namespace": "transactions",
+    "translations": { "az": "Reference", "en": "Reference", "ru": "Ссылка", "tr": "Referans", "de": "Referenz" }
+  },
+  {
+    "key": "rrn",
+    "namespace": "transactions",
+    "translations": { "az": "RRN", "en": "RRN", "ru": "RRN", "tr": "RRN", "de": "RRN" }
+  },
+  {
+    "key": "approval",
+    "namespace": "transactions",
+    "translations": { "az": "Approval", "en": "Approval", "ru": "Approval", "tr": "Onay", "de": "Approval" }
+  },
+  {
+    "key": "issuer",
+    "namespace": "transactions",
+    "translations": { "az": "Issuer", "en": "Issuer", "ru": "Эмитент", "tr": "Kart çıkaran", "de": "Emittent" }
+  },
+  {
+    "key": "pan",
+    "namespace": "transactions",
+    "translations": { "az": "PAN", "en": "PAN", "ru": "PAN", "tr": "PAN", "de": "PAN" }
+  },
+  {
+    "key": "datetime",
+    "namespace": "transactions",
+    "translations": { "az": "Tarix və saat", "en": "Date & time", "ru": "Дата и время", "tr": "Tarih ve saat", "de": "Datum & Uhrzeit" }
+  },
+  {
+    "key": "actions.cancel",
+    "namespace": "transactions",
+    "translations": { "az": "Ləğv et", "en": "Cancel", "ru": "Отменить", "tr": "İptal", "de": "Abbrechen" }
+  },
+  {
+    "key": "actions.capture",
+    "namespace": "transactions",
+    "translations": { "az": "Capture", "en": "Capture", "ru": "Capture", "tr": "Capture", "de": "Capture" }
+  },
+  {
+    "key": "actions.refund",
+    "namespace": "transactions",
+    "translations": { "az": "Refund", "en": "Refund", "ru": "Возврат", "tr": "İade", "de": "Rückerstattung" }
+  },
+  {
+    "key": "actions.chargeback",
+    "namespace": "transactions",
+    "translations": { "az": "Chargeback", "en": "Chargeback", "ru": "Чарджбэк", "tr": "Chargeback", "de": "Chargeback" }
+  },
+
+  {
+    "key": "editTitle",
+    "namespace": "example",
+    "translations": { "az": "Example məlumatlarını dəyiş", "en": "Edit example", "ru": "Изменить пример", "tr": "Örneği düzenle", "de": "Beispiel bearbeiten" }
+  },
+  {
+    "key": "viewTitle",
+    "namespace": "example",
+    "translations": { "az": "Example məlumatları", "en": "Example details", "ru": "Данные примера", "tr": "Örnek detayları", "de": "Beispieldetails" }
   }
 ]

@@ -6,7 +6,7 @@
  */
 
 // Translation data structure: { key, namespace, translations: { az, en, ru, tr, de } }
-const translationData = [
+let translationData = [
   // ========== COMMON NAMESPACE ==========
   // Language names (for language selector)
   { key: 'az', namespace: 'common', translations: { az: 'Azərbaycan', en: 'Azerbaijani', ru: 'Азербайджанский', tr: 'Azerbaycan', de: 'Aserbaidschanisch' } },
@@ -288,6 +288,25 @@ const translationData = [
   { key: 'seconds', namespace: 'datetimepicker', translations: { az: 'Saniyə', en: 'Seconds', ru: 'Секунды', tr: 'Saniye', de: 'Sekunden' } },
   { key: 'meridiem', namespace: 'datetimepicker', translations: { az: 'AM/PM', en: 'AM/PM', ru: 'AM/PM', tr: 'AM/PM', de: 'AM/PM' } },
 ];
+
+/**
+ * Prefer loading translations from `data/translation-data.json` (single source of truth).
+ * This keeps Strapi bootstrap seeding and this manual script in sync.
+ */
+try {
+  const fs = require('fs');
+  const path = require('path');
+  const jsonPath = path.join(__dirname, '..', 'data', 'translation-data.json');
+  if (fs.existsSync(jsonPath)) {
+    const parsed = JSON.parse(fs.readFileSync(jsonPath, 'utf-8'));
+    if (Array.isArray(parsed) && parsed.length > 0) {
+      translationData = parsed;
+      console.log(`✓ Loaded ${translationData.length} translations from: ${jsonPath}`);
+    }
+  }
+} catch (e) {
+  // Ignore and fall back to the embedded list
+}
 
 async function seedTranslations() {
   const { createStrapi, compileStrapi } = require('@strapi/strapi');

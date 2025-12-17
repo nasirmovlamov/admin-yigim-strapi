@@ -74,3 +74,5 @@ After deployment, verify:
 3. ✅ Old content type endpoints return 404: `/api/articles`, `/api/authors`, etc.
 4. ✅ Bootstrap logs show translation seeding completed
 
+
+
