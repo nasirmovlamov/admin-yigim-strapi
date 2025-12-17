@@ -3019,6 +3019,16 @@
     "translations": { "az": "№", "en": "№", "ru": "№", "tr": "№", "de": "№" }
   },
   {
+    "key": "tableHeader.id",
+    "namespace": "acquiring",
+    "translations": { "az": "ID", "en": "ID", "ru": "ID", "tr": "ID", "de": "ID" }
+  },
+  {
+    "key": "tableHeaderId",
+    "namespace": "acquiring",
+    "translations": { "az": "ID", "en": "ID", "ru": "ID", "tr": "ID", "de": "ID" }
+  },
+  {
     "key": "uid",
     "namespace": "acquiring",
     "translations": { "az": "UID", "en": "UID", "ru": "UID", "tr": "UID", "de": "UID" }
