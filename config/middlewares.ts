@@ -7,7 +7,13 @@ export default [
       contentSecurityPolicy: {
         useDefaults: true,
         directives: {
-          'connect-src': ["'self'", 'http://localhost:3000', 'http://localhost:3001', 'https://yigim-dashboard-fe.vercel.app'],
+          'connect-src': [
+            "'self'",
+            'http://localhost:3000',
+            'http://localhost:3001',
+            'https://yigim-dashboard-fe.vercel.app',
+            'https://portal.yigim.az',
+          ],
           upgradeInsecureRequests: null,
         },
       },
@@ -21,6 +27,7 @@ export default [
         'http://localhost:3000', 
         'http://localhost:3001',
         'https://yigim-dashboard-fe.vercel.app', // Production frontend on Vercel
+        'https://portal.yigim.az', // Portal frontend
       ],
       headers: [
         'Content-Type',
