@@ -671,6 +671,237 @@
     }
   },
   {
+    "key": "month.dec",
+    "namespace": "dashboard",
+    "translations": {
+      "az": "Dek",
+      "en": "Dec",
+      "ru": "Дек",
+      "tr": "Ara",
+      "de": "Dez"
+    }
+  },
+  {
+    "key": "noDataFound",
+    "namespace": "dashboard",
+    "translations": {
+      "az": "Məlumat tapılmadı",
+      "en": "No data found",
+      "ru": "Данные не найдены",
+      "tr": "Veri bulunamadı",
+      "de": "Keine Daten gefunden"
+    }
+  },
+  {
+    "key": "loading",
+    "namespace": "dashboard",
+    "translations": {
+      "az": "Yüklənir...",
+      "en": "Loading...",
+      "ru": "Загрузка...",
+      "tr": "Yükleniyor...",
+      "de": "Wird geladen..."
+    }
+  },
+  {
+    "key": "allStatuses",
+    "namespace": "dashboard",
+    "translations": {
+      "az": "Bütün statuslar",
+      "en": "All Statuses",
+      "ru": "Все статусы",
+      "tr": "Tüm Durumlar",
+      "de": "Alle Statusse"
+    }
+  },
+  {
+    "key": "status.noBalance",
+    "namespace": "dashboard",
+    "translations": {
+      "az": "Balans yoxdur",
+      "en": "No Balance",
+      "ru": "Нет баланса",
+      "tr": "Bakiye Yok",
+      "de": "Kein Guthaben"
+    }
+  },
+  {
+    "key": "status.deleted",
+    "namespace": "dashboard",
+    "translations": {
+      "az": "Silinib",
+      "en": "Deleted",
+      "ru": "Удалено",
+      "tr": "Silindi",
+      "de": "Gelöscht"
+    }
+  },
+  {
+    "key": "status.new",
+    "namespace": "dashboard",
+    "translations": {
+      "az": "Yeni",
+      "en": "New",
+      "ru": "Новый",
+      "tr": "Yeni",
+      "de": "Neu"
+    }
+  },
+  {
+    "key": "status.inProgress",
+    "namespace": "dashboard",
+    "translations": {
+      "az": "Davam edir",
+      "en": "In Progress",
+      "ru": "В процессе",
+      "tr": "Devam Ediyor",
+      "de": "In Bearbeitung"
+    }
+  },
+  {
+    "key": "status.paid",
+    "namespace": "dashboard",
+    "translations": {
+      "az": "Ödənilib",
+      "en": "Paid",
+      "ru": "Оплачено",
+      "tr": "Ödendi",
+      "de": "Bezahlt"
+    }
+  },
+  {
+    "key": "status.error",
+    "namespace": "dashboard",
+    "translations": {
+      "az": "Xəta",
+      "en": "Error",
+      "ru": "Ошибка",
+      "tr": "Hata",
+      "de": "Fehler"
+    }
+  },
+  {
+    "key": "status.unknown",
+    "namespace": "dashboard",
+    "translations": {
+      "az": "Naməlum",
+      "en": "Unknown",
+      "ru": "Неизвестно",
+      "tr": "Bilinmiyor",
+      "de": "Unbekannt"
+    }
+  },
+  {
+    "key": "status.insufficientFunds",
+    "namespace": "dashboard",
+    "translations": {
+      "az": "Kifayət qədər vəsait yoxdur",
+      "en": "Insufficient Funds",
+      "ru": "Недостаточно средств",
+      "tr": "Yetersiz Bakiye",
+      "de": "Unzureichende Mittel"
+    }
+  },
+  {
+    "key": "system",
+    "namespace": "dashboard",
+    "translations": {
+      "az": "Sistem",
+      "en": "System",
+      "ru": "Система",
+      "tr": "Sistem",
+      "de": "System"
+    }
+  },
+  {
+    "key": "product.acm",
+    "namespace": "dashboard",
+    "translations": {
+      "az": "ACM",
+      "en": "ACM",
+      "ru": "ACM",
+      "tr": "ACM",
+      "de": "ACM"
+    }
+  },
+  {
+    "key": "product.stream",
+    "namespace": "dashboard",
+    "translations": {
+      "az": "Stream",
+      "en": "Stream",
+      "ru": "Поток",
+      "tr": "Akış",
+      "de": "Stream"
+    }
+  },
+  {
+    "key": "product.magnet",
+    "namespace": "dashboard",
+    "translations": {
+      "az": "Magnet",
+      "en": "Magnet",
+      "ru": "Магнит",
+      "tr": "Mıknatıs",
+      "de": "Magnet"
+    }
+  },
+  {
+    "key": "merchant",
+    "namespace": "dashboard",
+    "translations": {
+      "az": "Merchant",
+      "en": "Merchant",
+      "ru": "Торговец",
+      "tr": "Satıcı",
+      "de": "Händler"
+    }
+  },
+  {
+    "key": "allMerchants",
+    "namespace": "dashboard",
+    "translations": {
+      "az": "Bütün merchantlar",
+      "en": "All Merchants",
+      "ru": "Все торговцы",
+      "tr": "Tüm Satıcılar",
+      "de": "Alle Händler"
+    }
+  },
+  {
+    "key": "searchMerchants",
+    "namespace": "dashboard",
+    "translations": {
+      "az": "Merchant axtar...",
+      "en": "Search merchants...",
+      "ru": "Поиск торговцев...",
+      "tr": "Satıcı ara...",
+      "de": "Händler suchen..."
+    }
+  },
+  {
+    "key": "itemsSelected",
+    "namespace": "dashboard",
+    "translations": {
+      "az": "{0} element seçilib",
+      "en": "{0} items selected",
+      "ru": "Выбрано элементов: {0}",
+      "tr": "{0} öğe seçildi",
+      "de": "{0} Elemente ausgewählt"
+    }
+  },
+  {
+    "key": "statusLabel",
+    "namespace": "dashboard",
+    "translations": {
+      "az": "Status",
+      "en": "Status",
+      "ru": "Статус",
+      "tr": "Durum",
+      "de": "Status"
+    }
+  },
+  {
     "key": "transactionDetails",
     "namespace": "transactions",
     "translations": {
