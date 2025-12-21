@@ -671,6 +671,83 @@
     }
   },
   {
+    "key": "dayFull.monday",
+    "namespace": "dashboard",
+    "translations": {
+      "az": "Bazar Ertəsi",
+      "en": "Monday",
+      "ru": "Понедельник",
+      "tr": "Pazartesi",
+      "de": "Montag"
+    }
+  },
+  {
+    "key": "dayFull.tuesday",
+    "namespace": "dashboard",
+    "translations": {
+      "az": "Çərşənbə axşamı",
+      "en": "Tuesday",
+      "ru": "Вторник",
+      "tr": "Salı",
+      "de": "Dienstag"
+    }
+  },
+  {
+    "key": "dayFull.wednesday",
+    "namespace": "dashboard",
+    "translations": {
+      "az": "Çərşənbə",
+      "en": "Wednesday",
+      "ru": "Среда",
+      "tr": "Çarşamba",
+      "de": "Mittwoch"
+    }
+  },
+  {
+    "key": "dayFull.thursday",
+    "namespace": "dashboard",
+    "translations": {
+      "az": "Cümə axşamı",
+      "en": "Thursday",
+      "ru": "Четверг",
+      "tr": "Perşembe",
+      "de": "Donnerstag"
+    }
+  },
+  {
+    "key": "dayFull.friday",
+    "namespace": "dashboard",
+    "translations": {
+      "az": "Cümə",
+      "en": "Friday",
+      "ru": "Пятница",
+      "tr": "Cuma",
+      "de": "Freitag"
+    }
+  },
+  {
+    "key": "dayFull.saturday",
+    "namespace": "dashboard",
+    "translations": {
+      "az": "Şənbə",
+      "en": "Saturday",
+      "ru": "Суббота",
+      "tr": "Cumartesi",
+      "de": "Samstag"
+    }
+  },
+  {
+    "key": "dayFull.sunday",
+    "namespace": "dashboard",
+    "translations": {
+      "az": "Bazar",
+      "en": "Sunday",
+      "ru": "Воскресенье",
+      "tr": "Pazar",
+      "de": "Sonntag"
+    }
+  },
+  {
     "key": "month.dec",
     "namespace": "dashboard",
     "translations": {
