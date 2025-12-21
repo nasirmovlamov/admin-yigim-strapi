@@ -3245,6 +3245,46 @@
     "translations": { "az": "Məzmun kopyalanmadı", "en": "Failed to copy content", "ru": "Не удалось скопировать содержимое", "tr": "İçerik kopyalanamadı", "de": "Inhalt konnte nicht kopiert werden" }
   },
   {
+    "key": "additionalDetails",
+    "namespace": "acquiring",
+    "translations": { "az": "Əlavə detallar", "en": "Additional Details", "ru": "Дополнительные детали", "tr": "Ek Detaylar", "de": "Zusätzliche Details" }
+  },
+  {
+    "key": "paymentInformation",
+    "namespace": "acquiring",
+    "translations": { "az": "Ödəniş məlumatları", "en": "Payment Information", "ru": "Информация о платеже", "tr": "Ödeme Bilgileri", "de": "Zahlungsinformationen" }
+  },
+  {
+    "key": "copyAdditionalDetailsTitle",
+    "namespace": "acquiring",
+    "translations": { "az": "Əlavə detalları kopyala", "en": "Copy additional details", "ru": "Копировать дополнительные детали", "tr": "Ek detayları kopyala", "de": "Zusätzliche Details kopieren" }
+  },
+  {
+    "key": "additionalDetailsCopied",
+    "namespace": "acquiring",
+    "translations": { "az": "Əlavə detallar kopyalandı", "en": "Additional details copied", "ru": "Дополнительные детали скопированы", "tr": "Ek detaylar kopyalandı", "de": "Zusätzliche Details kopiert" }
+  },
+  {
+    "key": "additionalDetailsCopyFailed",
+    "namespace": "acquiring",
+    "translations": { "az": "Əlavə detallar kopyalanmadı", "en": "Failed to copy additional details", "ru": "Не удалось скопировать дополнительные детали", "tr": "Ek detaylar kopyalanamadı", "de": "Zusätzliche Details konnten nicht kopiert werden" }
+  },
+  {
+    "key": "serialCopied",
+    "namespace": "acquiring",
+    "translations": { "az": "Serial kopyalandı", "en": "Serial copied", "ru": "Серийный номер скопирован", "tr": "Seri numarası kopyalandı", "de": "Seriennummer kopiert" }
+  },
+  {
+    "key": "serialCopyFailed",
+    "namespace": "acquiring",
+    "translations": { "az": "Serial kopyalanmadı", "en": "Failed to copy serial", "ru": "Не удалось скопировать серийный номер", "tr": "Seri numarası kopyalanamadı", "de": "Seriennummer konnte nicht kopiert werden" }
+  },
+  {
+    "key": "copySerialTitle",
+    "namespace": "acquiring",
+    "translations": { "az": "Serial kopyala", "en": "Copy serial", "ru": "Копировать серийный номер", "tr": "Seri numarasını kopyala", "de": "Seriennummer kopieren" }
+  },
+  {
     "key": "tableHeader.number",
     "namespace": "acquiring",
     "translations": { "az": "№", "en": "№", "ru": "№", "tr": "№", "de": "№" }
