@@ -1441,6 +1441,17 @@
     }
   },
   {
+    "key": "additionalInfo",
+    "namespace": "transactions",
+    "translations": {
+      "az": "Əlavə Məlumat",
+      "en": "Additional Information",
+      "ru": "Дополнительная информация",
+      "tr": "Ek Bilgi",
+      "de": "Zusätzliche Informationen"
+    }
+  },
+  {
     "key": "tableHeader.number",
     "namespace": "exports",
     "translations": {
@@ -3293,6 +3304,31 @@
     "key": "tableHeader.id",
     "namespace": "acquiring",
     "translations": { "az": "ID", "en": "ID", "ru": "ID", "tr": "ID", "de": "ID" }
+  },
+  {
+    "key": "tableHeader.agent",
+    "namespace": "acquiring",
+    "translations": { "az": "Agent", "en": "Agent", "ru": "Агент", "tr": "Ajan", "de": "Agent" }
+  },
+  {
+    "key": "tableHeader.service",
+    "namespace": "acquiring",
+    "translations": { "az": "Xidmət", "en": "Service", "ru": "Услуга", "tr": "Hizmet", "de": "Service" }
+  },
+  {
+    "key": "tableHeader.amount",
+    "namespace": "acquiring",
+    "translations": { "az": "Məbləğ", "en": "Amount", "ru": "Сумма", "tr": "Tutar", "de": "Betrag" }
+  },
+  {
+    "key": "tableHeader.date",
+    "namespace": "acquiring",
+    "translations": { "az": "Tarix", "en": "Date", "ru": "Дата", "tr": "Tarih", "de": "Datum" }
+  },
+  {
+    "key": "tableHeader.status",
+    "namespace": "acquiring",
+    "translations": { "az": "Status", "en": "Status", "ru": "Статус", "tr": "Durum", "de": "Status" }
   },
   {
     "key": "tableHeaderId",
